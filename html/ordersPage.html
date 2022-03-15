@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>Информация о заказе</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://getbootstrap.com/docs/5.1/examples/cover/cover.css">
+</head>
+<body class="d-flex h-100 text-center text-white bg-dark">
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <main class="px-3">
+    <h1>Подробная информация о заказе</h1>
+    <ul align="left">
+    <ul class="lead">OrderData:</ul>
+      <ul>
+      <ul>OrderUid: {{.OrderUid}}</ul>
+      <ul>TrackNumber: {{.TrackNumber}}</ul>
+      <ul>Entry: {{.Entry}}</ul>
+      <ul class="lead">Delivery:</ul>
+        <ul>
+        <ul>Name: {{.Delivery.Name}}</ul>
+        <ul>Phone: {{.Delivery.Phone}}</ul>
+        <ul>Zip: {{.Delivery.Zip}}</ul>
+        <ul>City: {{.Delivery.City}}</ul>
+        <ul>Address: {{.Delivery.Address}}</ul>
+        <ul>Region: {{.Delivery.Region}}</ul>
+        <ul>Email: {{.Delivery.Email}}</ul>
+        </ul>
+      <ul class="lead">Payment:</ul>
+        <ul>
+        <ul>Transaction: {{.Payment.CustomFee}}</ul>
+        <ul>RequestId: {{.Payment.CustomFee}}</ul>
+        <ul>Currency: {{.Payment.CustomFee}}</ul>
+        <ul>Provider: {{.Payment.CustomFee}}</ul>
+        <ul>Amount: {{.Payment.CustomFee}}</ul>
+        <ul>PaymentDt: {{.Payment.CustomFee}}</ul>
+        <ul>Bank: {{.Payment.CustomFee}}</ul>
+        <ul>DeliveryCost: {{.Payment.CustomFee}}</ul>
+        <ul>GoodsTotal: {{.Payment.CustomFee}}</ul>
+        <ul>CustomFee: {{.Payment.CustomFee}}</ul>
+        </ul>
+      <ul class="lead">Items:</ul>
+	 <ul>
+      {{range .Items}}
+	 <ul class="lead">[</ul>
+         <ul>ChrtId: {{.ChrtId}}</ul>
+         <ul>TrackNumber: {{.TrackNumber}}</ul>
+         <ul>Price: {{.Price}}</ul>
+         <ul>Rid: {{.Rid}}</ul>
+         <ul>Name: {{.Name}}</ul>
+         <ul>Sale: {{.Sale}}</ul>
+         <ul>Size: {{.Size}}</ul>
+         <ul>TotalPrice: {{.TotalPrice}}</ul>
+         <ul>NmId: {{.NmId}}</ul>
+         <ul>Brand: {{.Brand}}</ul>
+         <ul>Status: {{.Status}}</ul>
+         <ul class="lead">]</ul>
+        {{end}}
+	</ul>
+      <ul>Locale: {{.Locale}}</ul>
+      <ul>InternalSignature: {{.InternalSignature}}</ul>
+      <ul>CustomerId: {{.CustomerId}}</ul>
+      <ul>DeliveryService: {{.DeliveryService}}</ul>
+      <ul>Shardkey: {{.Shardkey}}</ul>
+      <ul>SmId: {{.SmId}}</ul>
+      <ul>DateCreated: {{.DateCreated}}</ul>
+      <ul>OofShard: {{.OofShard}}</ul>
+      </ul>
+    </ul>
+      <a href="/" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Вернуться назад</a>
+    </p>
+  </main>
+</div>
+</body>
+</html>
+

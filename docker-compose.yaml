@@ -1,0 +1,19 @@
+version: '3'
+services:
+  natsstreaming:
+    image: "nats-streaming"
+    container_name: "natsstreaming"
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+  dbfornats:
+    container_name: dbfornats
+    build: ./database
+    environment:
+      - POSTGRES_USER=alexey  
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=ordersdb
+    ports:
+      - "5434:5432"
+    volumes:
+      - /home/ubuntu/ServerForWb/postgresData:/var/lib/postgresql/data
